@@ -6,7 +6,7 @@ spark = SparkSession.builder\
     .appName('LinerRegression')\
     .getOrCreate()
 
-input_path = 'C:\\Vinod\\Code\\Data\\mlib\\sample_linear_regression_data.txt'
+input_path = 'rawdata\\sample_linear_regression_data.txt'
 
 training = spark.read.format('libsvm')\
     .option("header", True)\
