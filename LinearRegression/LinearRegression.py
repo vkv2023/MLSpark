@@ -6,7 +6,7 @@ spark = SparkSession.builder\
     .appName('LinerRegression')\
     .getOrCreate()
 
-input_path = 'rawdata\\sample_linear_regression_data.txt'
+input_path = '../rawdata/sample_linear_regression_data.txt'
 
 training = spark.read.format('libsvm')\
     .option("header", True)\
@@ -71,3 +71,5 @@ unlabeled_data.show()
 
 predictions = correct_model.transform(unlabeled_data)
 predictions.show()
+
+spark.stop()

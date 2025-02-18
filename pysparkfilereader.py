@@ -22,8 +22,7 @@ retail_df.show()
 #explain shows the lineage
 retail_df.sort('UnitPrice').explain()
 # shows the data after sorting on UnitPrice
-retail_df.sort('UnitPrice').show()
-
+retail_df.sort('UnitPrice').show(5)
 
 for row in retail_df.head(5):
     print(row, '\n')
