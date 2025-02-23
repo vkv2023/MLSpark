@@ -3,7 +3,7 @@ from pyspark.sql import SparkSession
 from pyspark.ml.clustering import KMeans
 
 
-inout_path_KMeans = '../rawdata/sample_kmeans_data.txt'
+inout_path_KMeans = '../rawdata/kmeans/sample_kmeans_data.txt'
 
 spark_kmeans = SparkSession.builder.appName('KMeans').getOrCreate()
 
@@ -45,10 +45,12 @@ evaluator = ClusteringEvaluator()
 print("*"*50)
 
 silhouette = evaluator.evaluate(predictions_kmeans)
-print("Silhouette with squared euclidean distance = " + str(silhouette))
+print("\nSilhouette with squared euclidean distance = " + str(silhouette))
 
 # Shows the result.
 centers = model_kmeans.clusterCenters()
-print("Cluster Centers: ")
+print("\nCluster Centers: \n")
 for center in centers:
     print(center)
+
+spark_kmeans.stop()
