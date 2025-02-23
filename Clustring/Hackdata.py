@@ -11,6 +11,10 @@ df_kmeans_hack_data = spark_kmeans_hackdata.read.format('csv') \
 
 # df_kmeans_hack_data.show(3)
 
+# =================
+# Format the Data
+# =================
+
 from pyspark.ml.clustering import KMeans
 from pyspark.ml.feature import VectorAssembler
 
@@ -42,6 +46,10 @@ cluster_final_hack_data = scaler_hack_data_model.transform(final_df_kmeans_hack_
 
 # scaledFeatures columns is added, confirm the same
 cluster_final_hack_data.printSchema()
+
+"""
+Training the Model and Evaluate
+"""
 
 kmeans2 = KMeans(featuresCol='scaledFeatures', k=2)
 kmeans3 = KMeans(featuresCol='scaledFeatures', k=3)
