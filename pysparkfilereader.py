@@ -1,12 +1,17 @@
 from pyspark.sql import SparkSession
 
-# Create a Spark session
+
+# Initialize Spark session and context
 spark = (SparkSession \
          .builder \
          .appName("SimplePySparkJob") \
          .config("spark.eventlog.enabled", "true") \
          .config("spark.logConf", "true") \
          .getOrCreate())
+
+# get the logger
+
+
 
 # Read a CSV file into a DataFrame
 input_file = "rawdata\\online-retail-dataset.csv"
@@ -30,4 +35,6 @@ for row in retail_df.head(5):
 retail_df.columns
 retail_df.select('InvoiceNo','StockCode').describe().show()
 
+# Stopping spark session
+print('Stopping spark session.....')
 spark.stop()
