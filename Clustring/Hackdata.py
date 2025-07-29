@@ -64,5 +64,5 @@ model_kmeans_hackdata_2.transform(cluster_final_hack_data).groupBy('prediction')
 
 model_kmeans_hackdata_3.transform(cluster_final_hack_data).groupBy('prediction').count().show()
 
-
+# Stop the SparkSession
 spark_kmeans_hackdata.stop()

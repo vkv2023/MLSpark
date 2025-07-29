@@ -53,4 +53,5 @@ print("\nCluster Centers: \n")
 for center in centers:
     print(center)
 
+# Stop the SparkSession
 spark_kmeans.stop()

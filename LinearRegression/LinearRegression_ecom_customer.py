@@ -74,4 +74,6 @@ predictions = lr_model.transform(unlabeled_data)
 
 predictions.show()
 
+print('Stopping spark session.....')
+# Stop the SparkSession
 spark.stop()

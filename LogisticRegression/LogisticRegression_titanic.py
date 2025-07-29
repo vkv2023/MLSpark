@@ -122,6 +122,8 @@ results_with_survived.select('Survived','prediction').show()
 
 print("\nPrinting AUC value:", AUC, '\n')
 
+print('Stopping spark session.....')
+# Stop the SparkSession
 spark.stop()
 
 
