@@ -2,8 +2,8 @@ from pyspark.sql import SparkSession
 
 """
 Seven geometric parameters of wheat kernels were measured:
-area A, perimeter P, compactness C = 4piA/P^2, length of kernel, width of kernel,
-asymmetry coefficient, length of kernel groove. 
+area A, perimeter P, compactness C = 4piA/P^2, length of kernel, 
+width of kernel, asymmetry coefficient, length of kernel groove. 
 All of these parameters were real-valued continuous.
 """
 spark_seed = SparkSession.builder.appName('seeds').getOrCreate()

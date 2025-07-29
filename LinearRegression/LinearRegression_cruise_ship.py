@@ -69,12 +69,8 @@ df.describe('crew','passenger_density').show()
 df.select(corr('crew','passenger_density')).show()
 
 
-
-
-
-
-
-
+print('Stopping spark session.....')
+# Stop the SparkSession
 spark.stop()
 
 
